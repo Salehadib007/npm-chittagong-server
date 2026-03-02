@@ -52,9 +52,11 @@ const enrollmentSchema = new mongoose.Schema(
 enrollmentSchema.pre("save", async function () {
   if (!this.enrollmentId) {
     const seq = await getNextSequence("enrollmentId");
+    console.log(seq);
+
     const year = new Date().getFullYear().toString().slice(-2);
 
-    this.enrollmentId = `${String(seq)}/${year}`;
+    this.enrollmentId = `${seq}/${year}`;
   }
 });
 export default mongoose.model("Enrollment", enrollmentSchema);

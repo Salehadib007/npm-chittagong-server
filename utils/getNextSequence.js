@@ -7,6 +7,5 @@ export async function getNextSequence(sequenceName) {
     { $inc: { seq: 1 } },
     { new: true, upsert: true },
   );
-
-  return counter.seq;
+  return String(counter.seq).padStart(4, "0");
 }
