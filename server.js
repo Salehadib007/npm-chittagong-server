@@ -15,7 +15,7 @@ connectDB();
 const app = express();
 
 const allowedOrigins = [
-  "https://npm-chittagong.vercel.app/",
+  "https://npm-chittagong-nu.vercel.app",
   "http://localhost:5173",
 ];
 
